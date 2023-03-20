@@ -98,7 +98,7 @@ public class HitboxComponent extends Component {
                         getEntity()
                                 .getComponent(PositionComponent.class)
                                 .orElseThrow(HitboxComponent::getMissingPositionComponentException);
-        return new Point(pc.getPosition().x + offset.x, pc.getPosition().y + offset.y);
+        return new Point(pc.getPosition()).add(offset);
     }
 
     /**
@@ -110,8 +110,7 @@ public class HitboxComponent extends Component {
                         getEntity()
                                 .getComponent(PositionComponent.class)
                                 .orElseThrow(HitboxComponent::getMissingPositionComponentException);
-        return new Point(
-                pc.getPosition().x + offset.x + size.x, pc.getPosition().y + offset.y + size.y);
+        return new Point(pc.getPosition()).add(offset).add(size);
     }
 
     /**
@@ -123,9 +122,7 @@ public class HitboxComponent extends Component {
                         getEntity()
                                 .getComponent(PositionComponent.class)
                                 .orElseThrow(HitboxComponent::getMissingPositionComponentException);
-        return new Point(
-                pc.getPosition().x + offset.x + size.x / 2,
-                pc.getPosition().y + offset.y + size.y / 2);
+        return new Point(size).divide(2).add(pc.getPosition()).add(offset);
     }
 
     /**
