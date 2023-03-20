@@ -26,8 +26,7 @@ public class Point {
 
     /** Copies the point. */
     public Point(Point p) {
-        x = p.x;
-        y = p.y;
+        this(p.x, p.y);
     }
 
     /**
