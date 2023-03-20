@@ -76,4 +76,16 @@ public class Point {
         float yDiff = p1.y - p2.y;
         return (float) Math.sqrt(xDiff * xDiff + yDiff * yDiff);
     }
+
+    /**
+     * adds other to the point
+     *
+     * @param other point to add
+     * @return the point where the values have changed
+     */
+    public Point add(Point other) {
+        this.x += other.x;
+        this.y += other.y;
+        return this;
+    }
 }
