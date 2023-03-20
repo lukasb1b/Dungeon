@@ -31,6 +31,15 @@ public class Point {
     }
 
     /**
+     * Creates a Point with 0 for x and y
+     *
+     * <p>same as `new Point(0,0)`
+     */
+    public Point() {
+        this(0, 0);
+    }
+
+    /**
      * Convert Point to Coordinate by parsing float to int
      *
      * @return the converted point
