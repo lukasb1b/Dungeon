@@ -191,16 +191,6 @@ public class AITools {
     }
 
     /**
-     * @param p1 Point A
-     * @param p2 Point B
-     * @param range Radius
-     * @return if the distance between the two points is within the radius
-     */
-    public static boolean inRange(Point p1, Point p2, float range) {
-        return Point.calculateDistance(p1, p2) <= range;
-    }
-
-    /**
      * @param entity1
      * @param entity2
      * @param range search radius
@@ -224,7 +214,7 @@ public class AITools {
                                                         new MissingComponentException(
                                                                 "PositionComponent")))
                         .getPosition();
-        return inRange(entity1Position, entity2Position, range);
+        return Point.inRange(entity1Position, entity2Position, range);
     }
 
     /**

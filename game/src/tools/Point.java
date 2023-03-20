@@ -39,6 +39,16 @@ public class Point {
     }
 
     /**
+     * @param p1 Point A
+     * @param p2 Point B
+     * @param range Radius
+     * @return if the distance between the two points is within the radius
+     */
+    public static boolean inRange(Point p1, Point p2, float range) {
+        return calculateDistance(p1, p2) <= range;
+    }
+
+    /**
      * Convert Point to Coordinate by parsing float to int
      *
      * @return the converted point
