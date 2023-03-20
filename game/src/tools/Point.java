@@ -55,15 +55,10 @@ public class Point {
      * @return the unit vector
      */
     public static Point getUnitDirectionalVector(Point b, Point a) {
-        Point interactionDir = new Point(b);
-        // (interactable - a) / len(interactable - a)
-        interactionDir.x -= a.x;
-        interactionDir.y -= a.y;
-        double vecLength = calculateDistance(a, b);
-        interactionDir.x /= vecLength;
-        interactionDir.y /= vecLength;
-        return interactionDir;
+        Point ret = new Point(b).sub(a);
+        return ret.divide(ret.length());
     }
+
     /**
      * calculates the distance between two points
      *
