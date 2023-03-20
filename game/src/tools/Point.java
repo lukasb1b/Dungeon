@@ -72,9 +72,7 @@ public class Point {
      * @return the Distance between the two points
      */
     public static float calculateDistance(Point p1, Point p2) {
-        float xDiff = p1.x - p2.x;
-        float yDiff = p1.y - p2.y;
-        return (float) Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+        return new Point(p1).sub(p2).length();
     }
 
     /**
