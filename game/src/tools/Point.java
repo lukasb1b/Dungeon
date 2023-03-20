@@ -88,4 +88,16 @@ public class Point {
         this.y += other.y;
         return this;
     }
+
+    /**
+     * subtracts other from the point
+     *
+     * @param other point to subtract
+     * @return the point where the values have changed
+     */
+    public Point sub(Point other) {
+        this.x -= other.x;
+        this.y -= other.y;
+        return this;
+    }
 }
