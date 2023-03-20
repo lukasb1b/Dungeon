@@ -100,4 +100,11 @@ public class Point {
         this.y -= other.y;
         return this;
     }
+
+    /**
+     * @return the length of the point
+     */
+    public float length() {
+        return (float) Math.sqrt(x * x + y * y);
+    }
 }
