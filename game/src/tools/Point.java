@@ -100,6 +100,18 @@ public class Point {
     }
 
     /**
+     * multiplies Point with a scalar
+     *
+     * @param scalar to be multiplied with
+     * @return the point where the values have changed
+     */
+    public Point multiply(float scalar) {
+        this.x += scalar;
+        this.y *= scalar;
+        return this;
+    }
+
+    /**
      * @return the length of the point
      */
     public float length() {
