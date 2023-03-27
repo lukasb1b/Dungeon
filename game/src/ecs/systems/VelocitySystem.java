@@ -24,9 +24,7 @@ public class VelocitySystem extends ECS_System {
     }
 
     private VSData updatePosition(VSData vsd) {
-        float newX = vsd.pc.getPosition().x + vsd.vc.getCurrentXVelocity();
-        float newY = vsd.pc.getPosition().y + vsd.vc.getCurrentYVelocity();
-        Point newPosition = new Point(newX, newY);
+        Point newPosition = new Point(vsd.vc.getXVelocity(), vsd.vc.getCurrentYVelocity()).add(vsd.pc.getPosition());
         if (Game.currentLevel.getTileAt(newPosition.toCoordinate()).isAccessible()) {
             vsd.pc.setPosition(newPosition);
             movementAnimation(vsd.e);
