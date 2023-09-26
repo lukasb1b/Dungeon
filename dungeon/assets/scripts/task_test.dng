@@ -3,19 +3,11 @@ single_choice_task aufgabe_1 {
     answers: ["Z", "a", "A"],
     correct_answer_index: 1
 }
-multiple_choice_task wuppie {
+multiple_choice_task wuppie1 {
     description: "Du bist doof, oder?",
     answers: ["Wupie", "Wuppi", "Wuppie", "Fluppie"],
     correct_answer_index: [2,3]
 }
-
-multiple_choice_task wuppie {
-    description: "Was sind korrekte Wuppies?",
-    answers: ["Wupie", "Wuppi", "Wuppie", "Fluppie"],
-    correct_answer_index: [2,3]
-}
-
-
 
 multiple_choice_task wuppie2 {
     description: "Was sind korrekte Wuppies?",
@@ -23,12 +15,37 @@ multiple_choice_task wuppie2 {
     correct_answer_index: [2,3]
 }
 
+
+
 multiple_choice_task wuppie3 {
     description: "Was sind korrekte Wuppies?",
     answers: ["Wupie", "Wuppi", "Wuppie", "Fluppie"],
     correct_answer_index: [2,3]
 }
 
-quest_config c {
-    tasks: [aufgabe_1, wuppie, wuppie2, wuppie3, wuppie]
+multiple_choice_task wuppie4 {
+    description: "Was sind korrekte Wuppies?",
+    answers: ["Wupie", "Wuppi", "Wuppie", "Fluppie"],
+    correct_answer_index: [2,3]
+}
+
+graph g_one{
+    aufgabe_1,
+    wuppie1,
+    wuppie2
+}
+
+graph g_two{
+    wuppie2,
+    wuppie3,
+    wuppie4
+}
+
+
+dungeon_config mission_one {
+    dependency_graph: g_one
+}
+
+dungeon_config mission_two {
+    dependency_graph: g_two
 }
